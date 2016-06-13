@@ -17,18 +17,15 @@ import javax.persistence.Table;
  * @author rapid
  */
 @Entity
-@Table(name="MENSAJE")
+@Table(name="mensaje")
 public class Mensaje {
     
     @Id
     @GeneratedValue
-    @Column(name="ID_MENSAJE")
     Integer id;
     
-    @Column(name="TITULO")
     String titulo;
-    
-    @Column(name="CUERPO")
+
     String cuerpo;
 
     public Mensaje(String titulo, String cuerpo) {

@@ -12,8 +12,8 @@ import org.springframework.data.repository.CrudRepository;
 
 /**
 Estos métodos automaticamente aparecen con el repositorio de HIbernate( CrudRepository<User, Long>)
- los métodos disponibles
- * son: available from such interface: save, delete, deleteAll, findOne and findAll.
+ los métodos disponibles  de dicha interface son
+ *  save, delete, deleteAll, findOne and findAll.
  */
 @Transactional
 public interface UserDao extends CrudRepository<User, Long> {
@@ -21,6 +21,6 @@ public interface UserDao extends CrudRepository<User, Long> {
   /**
    * Aqui se pueden personalizar los que quieras además de los anteriores
    */
-  public User buscarPorEmail(String email);
+  public User findByEmail(String email);
 
 } // class UserDao

@@ -51,10 +51,10 @@ public class ControladorUsuario {
  
   @RequestMapping("/obtener-por-email")
   @ResponseBody
-  public String getByEmail(String email) {
+  public String buscarPorEmail(String email) {
     String userId;
     try {
-      User user = userDao.buscarPorEmail(email);
+      User user = userDao.findByEmail(email);
       userId = String.valueOf(user.getId());
     }
     catch (Exception ex) {

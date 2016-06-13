@@ -5,6 +5,7 @@
  */
 package org.unitec;
 
+import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,5 +15,5 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Transactional
 public interface DAOMensaje extends CrudRepository<Mensaje,Long> {
-    
+    public List<Mensaje> findByTitulo(String titulo);
 }

@@ -8,9 +8,10 @@
  * Created: 11/06/2016
  */
 
-CREATE TABLE MENSAJE (ID_MENSAJE INTEGER, PRIMARY KEY AUTO_INCREMENT, TITULO VARCHAR(80), CUERPO VARCHAR(200));
---La misma tabla pero en Oracle
-CREATE TABLE MENSAJE(ID_MENSAJE INTEGER, TITULO VARCHAR2(80), CUERPO VARCHAR2(200),
-CONSTRAINT PK_MENSAJE PRIMARY KEY (ID_MENSAJE));
+create table user2(id integer primary key auto_increment, email varchar(80), name varchar(80));
 
-select * from mensaje
+CREATE TABLE mensaje(id INTEGER PRIMARY KEY AUTO_INCREMENT, titulo VARCHAR(80), cuerpo VARCHAR(200));
+
+select * from user2;
+select * from mensaje;
+
