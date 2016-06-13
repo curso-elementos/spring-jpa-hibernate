@@ -11,7 +11,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 /**
  *
- * @author rapid
+ * @author rapid Para  ver la documentación de esta API consulta la version oficial de spring.io es la siguiente
+ * 
  */
 @Transactional
 public interface DAOMensaje extends CrudRepository<Mensaje,Long> {
