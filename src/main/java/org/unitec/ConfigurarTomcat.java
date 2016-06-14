@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Configuration;
  *
  * @author campitos
  */
-@Configuration
+//@Configuration
 public class ConfigurarTomcat implements EmbeddedServletContainerCustomizer{
 
     @Override
