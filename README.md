@@ -23,6 +23,7 @@ spring.datasource.url = jdbc:mysql://localhost:3306/mysql?zeroDateTimeBehavior=c
 
 # Usuario y password para mysql
 spring.datasource.username = root
+
 #Para Wamp Server comentar el password, si es que no lo tiene 
 #spring.datasource.password = root
 
@@ -41,12 +42,14 @@ spring.datasource.validationQuery = SELECT 1
 spring.jpa.show-sql = true
 # Este es para que hibernate haga un update ante las operaciones
 # CUD
-# 
 spring.jpa.hibernate.ddl-auto = update
+
 # Estrategia de nombre de JPA
 spring.jpa.hibernate.naming-strategy = org.hibernate.cfg.ImprovedNamingStrategy
+
 # Asignando el dialecto de la abse de datos. en este caso es para MySQL
 spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5Dialect
+
 #--------------------------------------------------
 #PUERTO HTTP
 #--------------------------------------------------
