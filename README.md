@@ -1,4 +1,19 @@
+# spring-jpa-hibernate con Spring boot version 1.4.0. M3
 
+## Descargar la plantilla
+
+ESte proyecto funciona con la versión ya indicada, la puedes descargar de [de la pagina oficial](http://start.spring.io)
+
+## Propiedades importantes en *application.properties*
+En este archivo puedesn configurar las principales propiedades, en ellas vamos a configurar aspectos
+ escenciales de nuestra aplicación, en el siguiente enlace podrás obtener muchas de esas propiedades
+ las puedes ver en [siguiente link](http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html)
+
+En este caso sólo vamos a agregar algunas propiedades, que son las que se muestran en el 
+siguiente codigo, el cual se genera en la carpeta de recursos de tu proyecto de netbeans y dentro del archivo application.properties
+
+
+```
 # ===============================
 # Del datasource
 # ===============================
@@ -15,7 +30,7 @@ spring.datasource.url = jdbc:mysql://localhost:3306/mysql?zeroDateTimeBehavior=c
 spring.datasource.username = root
 
 #Para Wamp Server comentar el password, si es que no lo tiene 
-spring.datasource.password = root
+#spring.datasource.password = root
 
 # Usuario y password para oracle
 #spring.datasource.username = system
@@ -45,3 +60,8 @@ spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5Dialect
 #-------------------------------------------------------
 server.port=9999
  # Server HTTP port.
+
+```
+Se pueden agregar más parámetros pero con estos es suficientre para nuestro proyecto.
+
+
