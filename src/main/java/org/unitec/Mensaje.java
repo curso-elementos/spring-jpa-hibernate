@@ -17,7 +17,7 @@ import javax.persistence.Table;
  * @author rapid
  */
 @Entity
-@Table(name="mensaje")
+@Table(name="MENSAJE")
 public class Mensaje {
     
     @Id
