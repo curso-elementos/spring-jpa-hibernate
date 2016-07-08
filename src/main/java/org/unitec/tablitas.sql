@@ -24,5 +24,8 @@ CREATE TABLE mensaje(id INTEGER PRIMARY KEY AUTO_INCREMENT, titulo VARCHAR(80), 
 
 select * from user2;
 select * from mensaje;
-
-
+drop table persona;
+drop table direccion;
+create table persona (id Integer primary key auto_increment, nombre varchar(30));
+create table direccion(id_direccion  integer primary key auto_increment, id integer,municipio varchar(40), 
+foreign key(id) references persona(id) );
