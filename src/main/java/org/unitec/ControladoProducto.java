@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -19,8 +20,11 @@ public class ControladoProducto {
     @Autowired DAOProducto dao;
     
     
-    @RequestMapping("/guardar-producto")
-    @ResponseBody String guardarProducto(String nombre, Float precio){
+    @CrossOrigin
+    @RequestMapping(value="/producto/{nombre}/{precio}", method=RequestMethod.POST,
+            headers={"Accept=text/html"})
+    @ResponseBody String guardarProducto(@PathVariable String nombre,
+           @PathVariable Float precio){
         String mensajito="nada";
         try{
           
@@ -48,18 +52,17 @@ public class ControladoProducto {
         return mensajito;
     }
     
-    @RequestMapping("/buscarproducto-porid")
-    @ResponseBody String bucarPorId(Long id){
+    @RequestMapping(value="/producto/{id}")
+    @ResponseBody String bucarPorId(@PathVariable Long id)throws Exception{
         String mensajito="nada";
-        try{
+       
        Producto p=      dao.findOne(id);
+       ObjectMapper maper=new ObjectMapper();
        mensajito=p.toString();
-        }catch(Exception e){
-            mensajito=e.getMessage();
-        }
-        return mensajito;
+     
+        return maper.writeValueAsString(p);
     }
-    
+    //a) Verificar la anotacion de cross origin
     @CrossOrigin
     @RequestMapping(value="/producto", method=RequestMethod.GET, headers={"Accept=application/json"})
     @ResponseBody String buscarTodos()throws Exception{
