@@ -24,15 +24,8 @@ CREATE TABLE mensaje(id INTEGER PRIMARY KEY AUTO_INCREMENT, titulo VARCHAR(80), 
 
 select * from user2;
 select * from mensaje;
-
---cremos la tabla departamento que existe sin que existan empleados
-create table departamento(id integer primary key auto_increment, nombre varchar(40));
-
-create table empleado_x(id integer primary key auto_increment,
- id_departamento integer,
-nombre varchar(80), foreign key(id_departamento) references departamento(id));
-
-select * from departamento;
-select * from empleado_x;
-
-
+drop table persona;
+drop table direccion;
+create table persona (id Integer primary key auto_increment, nombre varchar(30));
+create table direccion(id_direccion  integer primary key auto_increment, id integer,municipio varchar(40), 
+foreign key(id) references persona(id) );

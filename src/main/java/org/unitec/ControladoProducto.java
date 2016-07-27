@@ -7,6 +7,8 @@ package org.unitec;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -18,6 +20,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class ControladoProducto {
     @Autowired DAOProducto dao;
+    @Autowired DAODireccion dd;
+    @Autowired DAOPersona dp;
     
     
     @CrossOrigin
@@ -73,6 +77,20 @@ public class ControladoProducto {
       return maper.writeValueAsString(productos);
     }
     
+    /*
+    Aqui esta con el HashMap
+    */
+     @CrossOrigin
+    @RequestMapping(value="/producto-map", method=RequestMethod.GET, headers={"Accept=application/json"})
+    @ResponseBody String buscarTodosMap()throws Exception{
+        String mensajito="nada";
+       HashMap map=new HashMap();
+       map.put("productos", dao.findAll());
+       
+              
+        ObjectMapper maper=new ObjectMapper();
+      return maper.writeValueAsString(map);
+    }
     @RequestMapping("/borrar-producto")
     @ResponseBody String borrarProducto(Long id){
         String mensajito="nada";
@@ -102,7 +120,14 @@ public class ControladoProducto {
     }
     
     
+      @CrossOrigin
+    @RequestMapping(value="/persona", method=RequestMethod.GET, headers={"Accept=application/json"})
+    @ResponseBody String personita()throws Exception{
     
+     Persona p=new Persona("Juan"); Direccion d=new Direccion("Ecatepec", p);
+     dd.save(d);
+   return "Guardado con exito";
+    }
     
     
     
